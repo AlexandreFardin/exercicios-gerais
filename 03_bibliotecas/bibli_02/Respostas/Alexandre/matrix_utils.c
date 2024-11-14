@@ -86,7 +86,15 @@ int possible_matrix_multiply(int cols1, int rows2){
  * @param matrix2 Segunda matriz.
  * @param result Matriz que armazenará o resultado da soma.
  */
-void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]);
+void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]){
+    int i,j;
+    for(i=0;i<rows1;i++){
+        for(j=0;i<cols1;j++){
+            result[i][j]=matrix1[i][j]+matrix2[i][j];
+        }
+        j=0;
+    }
+}
 
 /**
  * @brief Subtrai duas matrizes e armazena o resultado na primeira matriz.
@@ -98,7 +106,15 @@ void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  * @param matrix2 Segunda matriz.
  * @param result Matriz que armazenará o resultado da subtração.
  */
-void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]);
+void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]){
+    int i,j;
+    for(i=0;i<rows1;i++){
+        for(j=0;i<cols1;j++){
+            result[i][j]=matrix1[i][j]-matrix2[i][j];
+        }
+        j=0;
+    }
+}
 
 /**
  * @brief Multiplica duas matrizes e armazena o resultado na primeira matriz.
@@ -110,7 +126,15 @@ void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  * @param matrix2 Segunda matriz.
  * @param result Matriz que armazenará o resultado da multiplicação.
  */
-void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols2]);
+void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols2]){
+    int i,j;
+    for(i=0;i<rows1;i++){
+        for(j=0;i<cols1;j++){
+            result[i][j]=matrix1[i][j]-matrix2[i][j];
+        }
+        j=0;
+    }
+}
 
 /**
  * @brief Transpõe a matriz especificada.
