@@ -154,12 +154,24 @@ void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  */
 void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols2]){
     int i,j;
+    int k,l1,m1,l2,m2,num=0;
     for(i=0;i<rows1;i++){
-        for(j=0;j<cols1;j++){
-            result[i][j]=matrix1[i][j]-matrix2[i][j];
+        for(j=0;j<cols2;j++){
+            l1=i;
+            m1=j;
+            l2=i;
+            m2=j;
+            for(k=0;k<cols1;k++){
+                num+=matrix1[l1][m1]*matrix2[l2][m2];
+                l2++;
+                m1++;
+            }
+        
         }
+        result[i][j]=num;
         j=0;
     }
+    matrix_print(rows1,cols2,result);
 }
 
 /**
