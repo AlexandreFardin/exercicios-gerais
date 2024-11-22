@@ -1,6 +1,6 @@
 #ifndef MATRIX_UTILS_H
 #define MATRIX_UTILS_H
-
+void telaEntrada();
 /**
  * @brief Lê os valores da matriz especificada a partir da entrada padrão.
  * @param rows Número de linhas da matriz.

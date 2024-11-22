@@ -1,5 +1,17 @@
 #include "matrix_utils.h"
 #include <stdio.h>
+#include <stdlib.h>
+
+void telaEntrada(){
+    printf("1 - Somar matrizes\n");
+    printf("2 - Subtrair matrizes\n");
+    printf("3 - Multiplicar matrizes\n");
+    printf("4 - Multiplicacao de uma matriz por escalar\n");
+    printf("5 - Transposta de uma matriz\n");
+    printf("6 - Encerrar o programa\n");
+    printf("Opcao escolhida: \n");
+}
+
 /**
  * @brief Lê os valores da matriz especificada a partir da entrada padrão.
  * @param rows Número de linhas da matriz.
@@ -25,11 +37,15 @@ void matrix_read(int rows, int cols, int matrix[rows][cols]){
 void matrix_print(int rows, int cols, int matrix[rows][cols]){
     int i,j;
     for(i=0;i<rows;i++){
+        printf("|");
         for(j=0;j<cols;j++){
-            printf("%d ",matrix[i][j]);
+            printf("%d",matrix[i][j]);
+            if(j!=cols-1){
+                printf(" ");
+            }
         }
         j=0;
-        printf("\n");
+        printf("|\n");
     }
 }
 
@@ -87,13 +103,18 @@ int possible_matrix_multiply(int cols1, int rows2){
  * @param result Matriz que armazenará o resultado da soma.
  */
 void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]){
+    if(!possible_matrix_sum){
+        printf("n soma");
+        exit(0);
+    }
     int i,j;
     for(i=0;i<rows1;i++){
-        for(j=0;i<cols1;j++){
+        for(j=0;j<cols1;j++){
             result[i][j]=matrix1[i][j]+matrix2[i][j];
         }
         j=0;
     }
+    transpose_matrix(rows1,cols1,result,matrix1);
 }
 
 /**
@@ -107,13 +128,18 @@ void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  * @param result Matriz que armazenará o resultado da subtração.
  */
 void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]){
+    if(!possible_matrix_sub){
+        printf("n sub");
+        exit(0);
+    }
     int i,j;
     for(i=0;i<rows1;i++){
-        for(j=0;i<cols1;j++){
+        for(j=0;j<cols1;j++){
             result[i][j]=matrix1[i][j]-matrix2[i][j];
         }
         j=0;
     }
+    transpose_matrix(rows1,cols1,result,matrix1);
 }
 
 /**
@@ -129,7 +155,7 @@ void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
 void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols2]){
     int i,j;
     for(i=0;i<rows1;i++){
-        for(j=0;i<cols1;j++){
+        for(j=0;j<cols1;j++){
             result[i][j]=matrix1[i][j]-matrix2[i][j];
         }
         j=0;
@@ -143,7 +169,14 @@ void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2,
  * @param matrix Matriz a ser transposta.
  * @param result Matriz que armazenará o resultado da transposição.
  */
-void transpose_matrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows]);
+void transpose_matrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows]){
+    int i,j;
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            result[i][j]=matrix[i][j];
+        }
+    }
+}
 
 /**
  * @brief Multiplica a matriz especificada por um escalar.
