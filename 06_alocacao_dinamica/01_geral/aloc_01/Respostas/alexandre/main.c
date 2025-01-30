@@ -5,8 +5,8 @@
 int main(){
     int tam;
     scanf("%d\n",&tam);
-    int vetor[tam];
-    *vetor=CriaVetor(tam);
+    int *vetor;
+    vetor=CriaVetor(tam);
     LeVetor(vetor,tam);
     printf("%.2f\n",CalculaMedia(vetor,tam));
     LiberaVetor(vetor);
