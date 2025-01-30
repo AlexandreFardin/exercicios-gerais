@@ -1,0 +1,4 @@
+utils.c: In function ‘CriaVetor’:
+utils.c:18:9: warning: statement with no effect [-Wunused-value]
+   18 |         exit;
+      |         ^~~~

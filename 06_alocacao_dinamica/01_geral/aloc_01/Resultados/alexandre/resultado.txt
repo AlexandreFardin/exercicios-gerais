@@ -1,0 +1,17 @@
+Arquivos Esperados Corretos: 3 de 3
+Pastas Compiladas Corretamente: 3 de 3 
+Pastas Linkadas Corretamente: 3 de 3
+Teste main
+  - Resultados corretos: 2 de 2
+  - Valgrinds corretos: 0 de 2
+Nota de alexandre para o teste main: 1.67
+Teste completo
+  - Resultados corretos: 2 de 2
+  - Valgrinds corretos: 0 de 2
+Nota de alexandre para o teste completo: 1.66
+Teste utils
+  - Resultados corretos: 2 de 2
+  - Valgrinds corretos: 2 de 2
+Nota de alexandre para o teste utils: 3.33
+Nota de alexandre: 0+(3.33)+(1.67)+(1.66)
+Nota de alexandre: 6.66

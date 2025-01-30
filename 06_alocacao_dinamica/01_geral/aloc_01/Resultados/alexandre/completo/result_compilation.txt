@@ -1,0 +1,8 @@
+main.c: In function ‘main’:
+main.c:9:11: warning: assignment to ‘int’ from ‘int *’ makes integer from pointer without a cast [-Wint-conversion]
+    9 |     *vetor=CriaVetor(tam);
+      |           ^
+utils.c: In function ‘CriaVetor’:
+utils.c:18:9: warning: statement with no effect [-Wunused-value]
+   18 |         exit;
+      |         ^~~~

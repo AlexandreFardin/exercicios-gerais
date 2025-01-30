@@ -1,0 +1,32 @@
+==20978== Memcheck, a memory error detector
+==20978== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20978== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==20978== Command: Resultados/alexandre/main/prog Resultados/alexandre/main/Casos/2
+==20978== Parent PID: 20977
+==20978== 
+==20978== Invalid free() / delete / delete[] / realloc()
+==20978==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==20978==    by 0x1094B9: LiberaVetor (in /home/affsilva/a/exercicios-gerais/06_alocacao_dinamica/01_geral/aloc_01/Resultados/alexandre/main/prog)
+==20978==    by 0x109364: main (in /home/affsilva/a/exercicios-gerais/06_alocacao_dinamica/01_geral/aloc_01/Resultados/alexandre/main/prog)
+==20978==  Address 0x1fff000110 is on thread 1's stack
+==20978==  in frame #2, created by main (???:)
+==20978== 
+==20978== 
+==20978== HEAP SUMMARY:
+==20978==     in use at exit: 20 bytes in 1 blocks
+==20978==   total heap usage: 3 allocs, 3 frees, 8,212 bytes allocated
+==20978== 
+==20978== 20 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==20978==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==20978==    by 0x1093AF: CriaVetor (in /home/affsilva/a/exercicios-gerais/06_alocacao_dinamica/01_geral/aloc_01/Resultados/alexandre/main/prog)
+==20978==    by 0x109308: main (in /home/affsilva/a/exercicios-gerais/06_alocacao_dinamica/01_geral/aloc_01/Resultados/alexandre/main/prog)
+==20978== 
+==20978== LEAK SUMMARY:
+==20978==    definitely lost: 20 bytes in 1 blocks
+==20978==    indirectly lost: 0 bytes in 0 blocks
+==20978==      possibly lost: 0 bytes in 0 blocks
+==20978==    still reachable: 0 bytes in 0 blocks
+==20978==         suppressed: 0 bytes in 0 blocks
+==20978== 
+==20978== For lists of detected and suppressed errors, rerun with: -s
+==20978== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
